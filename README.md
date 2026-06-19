@@ -1,4 +1,4 @@
-# `@mad/router`
+# `@mad-c/router`
 
 Simple router for small projects.
 
