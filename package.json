@@ -1,6 +1,6 @@
 {
 	"name": "@mad/router",
-	"version": "1.0.0",
+	"version": "0.1.0",
 	"description": "Simple router for simple web server",
 	"keywords": [
 		"router",
@@ -18,11 +18,18 @@
 		}
 	},
 	"exports": {
-		".": "./dist/index.js",
-		"./node-adapter": "./dist/node-adapter.js"
+		".": {
+			"import": "./dist/index.js",
+			"type": "./dist/index.d.ts"
+		},
+		"./node-adapter": {
+			"import": "./dist/node-adapter.js",
+			"types": "./dist/node-adapter.d.ts"
+		}
 	},
 	"scripts": {
-		"build": "tsc --exclude \"src/**/*.test.ts\"",
+		"prepublishOnly": "pnpm run build",
+		"build": "tsc",
 		"format": "dprint fmt",
 		"typecheck": "tsc --noEmit",
 		"lint:js": "oxlint --fix",
