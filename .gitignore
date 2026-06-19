@@ -1,0 +1,16 @@
+# Logs
+*.log
+pnpm-debug.log*
+
+# MacOS annoying files
+.DS_Store
+
+# Dependencies
+node_modules
+*.tsbuildinfo
+
+# Tests
+coverage
+
+# Built files
+dist/

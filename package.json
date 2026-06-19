@@ -1,0 +1,41 @@
+{
+	"name": "@mad/router",
+	"version": "1.0.0",
+	"description": "Simple router for simple web server",
+	"keywords": [
+		"router",
+		"urlpattern",
+		"server"
+	],
+	"author": "madcampos",
+	"license": "LGPL-3.0-or-later",
+	"type": "module",
+	"devEngines": {
+		"packageManager": {
+			"name": "pnpm",
+			"version": "^11.0.7",
+			"onFail": "error"
+		}
+	},
+	"exports": {
+		".": "./dist/index.js",
+		"./node-adapter": "./dist/node-adapter.js"
+	},
+	"scripts": {
+		"build": "tsc --exclude \"src/**/*.test.ts\"",
+		"format": "dprint fmt",
+		"typecheck": "tsc --noEmit",
+		"lint:js": "oxlint --fix",
+		"lint": "pnpm run typecheck && pnpm run lint:js",
+		"test": "vitest"
+	},
+	"devDependencies": {
+		"@types/node": "^25.9.3",
+		"@vitest/coverage-v8": "^4.1.8",
+		"dprint": "^0.54.0",
+		"oxlint": "^1.69.0",
+		"oxlint-tsgolint": "^0.23.0",
+		"typescript": "^6.0.3",
+		"vitest": "^4.1.8"
+	}
+}
